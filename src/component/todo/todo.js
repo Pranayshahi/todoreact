@@ -86,7 +86,11 @@ const Todo = () => {
               type="text"
               placeholder="+ Add Item"
               className="form-control"
-              value={inputdata}
+              value={inputdata} onKeyPress={event => {
+                        if (event.key === 'Enter') {
+                            addItem();
+                        }
+                    }}
               onChange={(event) => setInputData(event.target.value)}
             />
             {toggleButton ? (
